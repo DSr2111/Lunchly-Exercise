@@ -29,7 +29,7 @@ class Reservation {
 
   /**getting and setting start time */
   set startAt(val) {
-    if (val instanceof Date && !isNaN(val)) this._start = val;
+    if (val instanceof Date && !isNaN(val)) this._startAt = val;
     else throw new Error("Not a valid startAt");
   }
 
