@@ -65,7 +65,9 @@ class Customer {
     this._phone = val || null;
   }
 
-  
+  get phone() {
+    return this._phone;
+  }
   /** get all reservations for this customer. */
 
   async getReservations() {
