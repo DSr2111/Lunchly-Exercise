@@ -108,6 +108,13 @@ class Reservation {
              RETURNING id`,
         [this.customerId, this.numGuests, this.startAt, this.notes]
       );
+      this.id = result.rows[0].id;
+    } else {
+      await db.query(
+        `UPDATE reservations SET num_guests=$1, start_at=$2, notes=$3
+            WHERE id=$4`,
+        [this.numGuests, this.startAt, this.notes, this.id]
+      );
     }
   }
 }
