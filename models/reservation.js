@@ -88,6 +88,14 @@ class Reservation {
     );
 
     let reservation = results.row[0];
+
+    if (reservation === undefined) {
+      const err = new Error(`No such reservation: ${id}`);
+      err.status = 404;
+      throw err;
+    }
+
+    return new Reservation(reservation);
   }
 }
 
