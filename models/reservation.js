@@ -27,6 +27,10 @@ class Reservation {
     return this._numGuests;
   }
 
+  /**getting and setting start time */
+  set startAt(val) {
+    if (val instanceof Date && !isNaN(val)) this._start = val;
+  }
   /** formatter for startAt */
 
   getformattedStartAt() {
