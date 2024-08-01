@@ -53,12 +53,19 @@ class Customer {
     return new Customer(customer);
   }
 
-  // get customer full name
+  //** */ get customer full name */
 
   get fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
 
+  //** getting and setting phone */
+
+  set phone(val) {
+    this._phone = val || null;
+  }
+
+  
   /** get all reservations for this customer. */
 
   async getReservations() {
