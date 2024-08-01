@@ -72,6 +72,23 @@ class Reservation {
   get customerId() {
     return this._customerId;
   }
+
+  //** find a reservation by id */
+
+  static async get(id) {
+    const result = await db.query(
+      `SELECT id, 
+           customer_id AS "customerId", 
+           num_guests AS "numGuests", 
+           start_at AS "startAt",
+           notes
+         FROM reservations 
+         WHERE id = $1`,
+      [id]
+    );
+
+    let reservation = results.row[0];
+  }
 }
 
 module.exports = Reservation;
