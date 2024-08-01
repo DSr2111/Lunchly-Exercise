@@ -98,7 +98,7 @@ class Reservation {
     return new Reservation(reservation);
   }
 
-  //** saveing reservation */
+  //** saving reservation */
 
   async save() {
     if (this.id === undefined) {
