@@ -31,9 +31,13 @@ class Reservation {
   set startAt(val) {
     if (val instanceof Date && !isNaN(val)) this._start = val;
   }
+
+  get startAt() {
+    return this._startAt;
+  }
   /** formatter for startAt */
 
-  getformattedStartAt() {
+  get formattedStartAt() {
     return moment(this.startAt).format("MMMM Do YYYY, h:mm a");
   }
 
