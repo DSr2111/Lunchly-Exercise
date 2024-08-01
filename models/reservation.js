@@ -28,6 +28,7 @@ class Reservation {
   }
 
   /**getting and setting start time */
+
   set startAt(val) {
     if (val instanceof Date && !isNaN(val)) this._startAt = val;
     else throw new Error("Not a valid startAt");
@@ -36,6 +37,7 @@ class Reservation {
   get startAt() {
     return this._startAt;
   }
+
   /** formatter for startAt */
 
   get formattedStartAt() {
